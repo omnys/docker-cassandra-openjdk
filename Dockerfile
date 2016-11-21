@@ -14,7 +14,7 @@ RUN echo "deb http://debian.datastax.com/community stable main" > /etc/apt/sourc
 # Workaround for https://github.com/docker/docker/issues/6345
 RUN ln -s -f /bin/true /usr/bin/chfn
 
-# Install Cassandra
+# Install Cassandra and clean apt
 RUN apt-get update && \
     apt-get install -y cassandra=$CASSANDRA_VERSION dsc22=$DATASTAX_COMMUNITY_VERSION && \
     apt-get clean && \
