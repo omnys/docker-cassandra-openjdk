@@ -4,8 +4,6 @@ MAINTAINER Omnys srl <sistemi@omnys.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV CASSANDRA_CONFIG /etc/cassandra
-ENV CASSANDRA_VERSION = 2.2.6
-ENV DATASTAX_COMMUNITY_VERSION = 2.2.6-1
 
 # Add DataStax sources
 RUN curl -L http://debian.datastax.com/debian/repo_key | apt-key add -
@@ -16,6 +14,6 @@ RUN ln -s -f /bin/true /usr/bin/chfn
 
 # Install Cassandra and clean apt
 RUN apt-get update && \
-    apt-get install -y cassandra=$CASSANDRA_VERSION dsc22=$DATASTAX_COMMUNITY_VERSION && \
+    apt-get install -y cassandra=2.2.6 dsc22=2.2.6-1 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
