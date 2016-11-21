@@ -1,0 +1,1 @@
+# docker-cassandra-openjdk
